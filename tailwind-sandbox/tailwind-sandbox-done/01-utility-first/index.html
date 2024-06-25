@@ -55,9 +55,7 @@
       </div>
     </div>
 
-    <div
-      class="flex items-center p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-x-4"
-    >
+    <div class="flex items-center p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-x-4 mt-4">
       <div>
         <img class="h-12 w-12" src="../assets/img/warning.svg" alt="alert" />
       </div>
@@ -66,5 +64,30 @@
         <p class="text-slate-500">You are about to delete a post</p>
       </div>
     </div>
+
+    <!-- New button to trigger alert -->
+    <div class="flex justify-center mt-8">
+      <button id="showAlertButton" class="px-4 py-2 bg-blue-500 text-white rounded-lg">
+        Show New Alert
+      </button>
+    </div>
+
+    <script>
+      document.getElementById('showAlertButton').addEventListener('click', function() {
+        const newAlert = document.createElement('div');
+        newAlert.classList.add('alert', 'mt-4');
+        newAlert.innerHTML = `
+          <div class="alert-logo-wrap">
+            <img class="alert-logo" src="https://via.placeholder.com/48" alt="alert" />
+          </div>
+          <div class="alert-body">
+            <h4 class="alert-title">New Alert!</h4>
+            <p class="alert-message">This is a dynamically added alert message.</p>
+          </div>
+        `;
+        document.body.appendChild(newAlert);
+      });
+    </script>
   </body>
 </html>
+
